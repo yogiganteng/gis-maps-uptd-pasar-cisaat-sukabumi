@@ -113,8 +113,8 @@
                     <div class="alert alert-info">Berita Terbaru</div>
                     <ul class="nav nav-list bs-docs-sidenav affix-top">
                         <?php
-                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
-                              while ($dataartikel = mysql_fetch_array($query)) {
+                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
+                              while ($dataartikel = mysqli_fetch_array($query)) {
 
                               $id = base64_encode($dataartikel['id']);
                           ?>
@@ -129,8 +129,8 @@
                     <div class="alert alert-info">Agenda Terbaru</div>
                     <ul class="nav nav-list bs-docs-sidenav affix-top">
                         <?php
-                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
-                                while ($dataartikel = mysql_fetch_array($query)) {
+                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
+                                while ($dataartikel = mysqli_fetch_array($query)) {
                             $id = base64_encode($dataartikel['id']);
                         ?>
                         <li><a href="informasi_read.php?id=<?php echo $id; ?>"><i class="icon-chevron-right"></i> <?php echo $dataartikel['judul']; ?></a></li>
@@ -144,8 +144,8 @@
                     <div class="alert alert-info">Pengumuman Terbaru</div>
                     <ul class="nav nav-list bs-docs-sidenav affix-top">
                         <?php
-                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
-                              while ($dataartikel = mysql_fetch_array($query)) {
+                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
+                              while ($dataartikel = mysqli_fetch_array($query)) {
                                 $id = base64_encode($dataartikel['id']);
                         ?>
                         <li><a href="informasi_read.php?id=<?php echo $id; ?>"><i class="icon-chevron-right"></i> <?php echo $dataartikel['judul']; ?></a></li>

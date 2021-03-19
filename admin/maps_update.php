@@ -7,7 +7,7 @@
 	$coords   = $_POST['coords'];
 	$status   = '1';
 
-	$query = mysql_query("UPDATE image_maps SET id_blok='$id_blok', alt='$alt', coords='$coords', status='$status' WHERE id='$id'") or die (mysql_error('Tebel tidak ditemukan'));
+	$query = mysqli_query("UPDATE image_maps SET id_blok='$id_blok', alt='$alt', coords='$coords', status='$status' WHERE id='$id'") or die (mysqli_error('Tebel tidak ditemukan'));
 
 	if ($query) {
 		echo '<script>alert ("Data Maps Berhasil diupdate!");document.location.href="+home.php?page=bWFwc192aWV3";</script>';

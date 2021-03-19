@@ -5,7 +5,7 @@
 	$judul = $_POST['judul'];
 	$isi   = $_POST['isi'];
 
-	$query = mysql_query("UPDATE profil SET judul='$judul', isi='$isi' WHERE id='$id'") or die (mysql_error('Tebel tidak ditemukan'));
+	$query = mysqli_query("UPDATE profil SET judul='$judul', isi='$isi' WHERE id='$id'") or die (mysqli_error('Tebel tidak ditemukan'));
 
 	if ($query) {
 		echo '<script>alert ("Profil berhasil diupdate!"); document.location.href="+home.php?page=cHJvZmlsX3ZpZXc=";</script>';

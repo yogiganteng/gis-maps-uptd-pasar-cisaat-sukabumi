@@ -55,8 +55,8 @@
 
 								$cari 	= $_POST['cari'];
 			            		$no 	= 1;
-			            		$query 	= mysql_query("SELECT * FROM kios WHERE id_blok LIKE '%$cari%' LIMIT 0, 30") or die (mysql_error('Tabel tidak ditemukan'));
-			            			while ($data = mysql_fetch_array($query)){
+			            		$query 	= mysqli_query("SELECT * FROM kios WHERE id_blok LIKE '%$cari%' LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
+			            			while ($data = mysqli_fetch_array($query)){
 
 			            			$id = base64_encode($data['id']);
 			            	?>

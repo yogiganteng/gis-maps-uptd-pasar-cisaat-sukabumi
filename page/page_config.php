@@ -8,10 +8,10 @@
 	
 	
 	 
-	$koneksi = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+	$koneksi = mysqlii_connect($db_host, $db_user, $db_pass, $db_name);
 	 
-	if(mysqli_connect_errno()){
-		echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
+	if(mysqlii_connect_errno()){
+		echo 'Gagal melakukan koneksi ke Database : '.mysqlii_connect_error();
 	}else{
 		echo 'Koneksi berhasil ^_^';
 	}

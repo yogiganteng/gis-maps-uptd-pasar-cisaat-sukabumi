@@ -26,13 +26,13 @@
             $gambar = $namafolder . basename($_FILES['foto']['name']);       
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $gambar)) {
                 
-                $query2     = mysql_query("SELECT * FROM kios WHERE id='$id'");
-                $ambilkios = mysql_fetch_array($query2);
+                $query2     = mysqli_query("SELECT * FROM kios WHERE id='$id'");
+                $ambilkios = mysqli_fetch_array($query2);
                 unlink($ambilkios['foto']);
 
                 echo '<script>alert ("Data Status Kepemilikan KIOS Berhasil diupdate"); document.location.href="+home.php?page=bWFwc19rZXRlcmFuZ2FuX3ZpZXc=";</script>';
 
-                $query= mysql_query("UPDATE kios SET id_blok='$id_blok', no_blok='$no_blok', nama='$nama', tempat='$tempat', tanggal='$tanggal', alamat='$alamat', pekerjaan='$pekerjaan', jenis_komoditas='$jenis_komoditas', type='$type', ukuran='$ukuran', status_kepemilikan='$status_kepemilikan', no_shgp='$no_shgp', foto='$gambar', status='$status' WHERE id='$id'") or die (mysql_error('Tabel tidak ditemukan'));
+                $query= mysqli_query("UPDATE kios SET id_blok='$id_blok', no_blok='$no_blok', nama='$nama', tempat='$tempat', tanggal='$tanggal', alamat='$alamat', pekerjaan='$pekerjaan', jenis_komoditas='$jenis_komoditas', type='$type', ukuran='$ukuran', status_kepemilikan='$status_kepemilikan', no_shgp='$no_shgp', foto='$gambar', status='$status' WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
             }else{ 
                 echo '<script>alert ("Maaf, Data Status Kepemilikan KIOS Gagal diupdate!"); document.location.href="+home.php?page=bWFwc19rZXRlcmFuZ2FuX3ZpZXc=";</script>';
             }

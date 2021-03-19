@@ -25,8 +25,8 @@
 
                                         $id = base64_decode($_GET['id']);
 
-                                        $query = mysql_query("SELECT * FROM kios WHERE id='$id'") or die (mysql_error('Tabel tidak ditemukan'));
-                                        $data  = mysql_fetch_array($query);
+                                        $query = mysqli_query("SELECT * FROM kios WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
+                                        $data  = mysqli_fetch_array($query);
                                     ?>
 
                                     <div id="masthead">

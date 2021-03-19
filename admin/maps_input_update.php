@@ -3,8 +3,8 @@
 
     $id = base64_decode($_GET['id']);
 
-    $query    = mysql_query("SELECT * FROM image_maps WHERE id='$id'") or die (mysql_error('Tabel tidak ditemukan'));
-    $datamaps = mysql_fetch_array($query);
+    $query    = mysqli_query("SELECT * FROM image_maps WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
+    $datamaps = mysqli_fetch_array($query);
 ?>
 
 <div id="masthead">

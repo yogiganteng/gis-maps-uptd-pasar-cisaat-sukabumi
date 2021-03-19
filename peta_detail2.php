@@ -13,8 +13,8 @@
                                         <?php
 											include 'page/page_config.php';
 
-											$query = mysql_query("SELECT * FROM kios WHERE  id_blok='$_GET[id_blok]'") or die (mysql_error('tabel tidak ditemukan'));
-											$ambilkios = mysql_fetch_array($query);
+											$query = mysqli_query("SELECT * FROM kios WHERE  id_blok='$_GET[id_blok]'") or die (mysqli_error('tabel tidak ditemukan'));
+											$ambilkios = mysqli_fetch_array($query);
 										?>
 										<center><h2>DATA DETAIL STATUS KEPEMILIKAN KIOS<br>UPTD PASAR CISAAT</h2></center>
 										<table class="table table-hover">

@@ -38,8 +38,8 @@
 			            		include '../page/page_config.php';
 
 			            		$no = 1;
-			            		$query = mysql_query("SELECT * FROM kotak_saran") or die (mysql_error('Tabel tidak ditemukan'));
-			            			while ($data = mysql_fetch_array($query)){
+			            		$query = mysqli_query("SELECT * FROM kotak_saran") or die (mysqli_error('Tabel tidak ditemukan'));
+			            			while ($data = mysqli_fetch_array($query)){
 
 			            			$id = base64_encode($data['id']);
 			            	?>

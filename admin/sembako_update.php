@@ -13,7 +13,7 @@
 	 $asal_barang    = $_POST['asal_barang'];
 
 	 if (isset($_POST['update'])) {
-        $query = mysql_query("UPDATE sembako SET kategori='$kategori', jenis='$jenis', jenis_satuan='$jenis_satuan', ph_minggu_lalu='$ph_minggu_lalu', ph_minggu_ini='$ph_minggu_ini', ps_minggu_lalu='$ps_minggu_lalu', ps_minggu_ini='$ps_minggu_ini', ps_satuan='$ps_satuan', asal_barang='$asal_barang' WHERE id='$id'") or die (mysql_error('Tabel tidak ditemukan'));
+        $query = mysqli_query("UPDATE sembako SET kategori='$kategori', jenis='$jenis', jenis_satuan='$jenis_satuan', ph_minggu_lalu='$ph_minggu_lalu', ph_minggu_ini='$ph_minggu_ini', ps_minggu_lalu='$ps_minggu_lalu', ps_minggu_ini='$ps_minggu_ini', ps_satuan='$ps_satuan', asal_barang='$asal_barang' WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
 
         if ($query) {
             echo "<script>alert('Data Berhasil diupdate');document.location.href='+home.php?page=c2VtYmFrb192aWV3'; </script>";
