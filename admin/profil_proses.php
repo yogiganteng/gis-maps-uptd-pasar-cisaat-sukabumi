@@ -9,7 +9,7 @@
     $status   = '1';
 
     if (isset($_POST['simpan'])) {
-        $query = mysql_query("INSERT INTO profil (judul,anchor,date,kategori,isi,status) VALUES ('$judul', '$anchor', '$date', '$kategori', '$isi', '$status')") or die (mysql_error('Tabel tidak ditemukan'));
+        $query = mysqli_query("INSERT INTO profil (judul,anchor,date,kategori,isi,status) VALUES ('$judul', '$anchor', '$date', '$kategori', '$isi', '$status')") or die (mysqli_error('Tabel tidak ditemukan'));
 
         if ($query) {
             echo "<script>alert('Data Berhasil disimpan'); document.location.href='+home.php?page=cHJvZmlsX3ZpZXc='; </script>";

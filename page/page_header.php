@@ -27,8 +27,8 @@
                     <ul class="dropdown-menu">
                         <?php
                             include 'page/page_config.php';
-                            $query = mysql_query("SELECT * FROM profil WHERE status = '1' ORDER BY id") or die (mysql_error('Tabel tidak ditemukan'));
-                            while ($data = mysql_fetch_array($query)){
+                            $query = mysqli_query("SELECT * FROM profil WHERE status = '1' ORDER BY id") or die (mysqli_error('Tabel tidak ditemukan'));
+                            while ($data = mysqli_fetch_array($query)){
 
                             $id   = base64_encode($data['id']);
                         ?>
