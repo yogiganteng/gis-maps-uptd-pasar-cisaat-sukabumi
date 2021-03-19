@@ -16,6 +16,19 @@ if(mysqli_connect_errno()){
 }
 
 
+$host		="localhost";
+	$user		="yogi";
+	$pass		="Dbdigitalocean2021!";
+	$db 		="project_gis_pasarcisaat";
+
+	$koneksi2=mysql_connect($host,$user,$pass);
+
+if($koneksi2)
+{
+echo ('okk');
+} else {
+echo ('gagal');
+}
 $nama_db = 'project_gis_pasarcisaat';
 $user_db = 'yogi';
 $kata_sandi = 'Dbdigitalocean2021!';
