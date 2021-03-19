@@ -6,6 +6,6 @@
 	$pass		="Dbdigitalocean2021!";
 	$db 		="project_gis_pasarcisaat";
 
-	$koneksi=mysql_connect($host,$user,$pass);
-	mysql_select_db($db,$koneksi);	
+	$koneksi=mysqli_connect($host,$user,$pass);
+	mysqli_select_db($db,$koneksi);	
 ?>
