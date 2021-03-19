@@ -12,7 +12,7 @@
 	 $asal_barang    = $_POST['asal_barang'];
 
 	 if (isset($_POST['simpan'])) {
-        $query = mysqli_query("INSERT INTO sembako (kategori,jenis,jenis_satuan,ph_minggu_lalu,ph_minggu_ini,ps_minggu_lalu,ps_minggu_ini,ps_satuan,asal_barang) VALUES ('$kategori','$jenis','$jenis_satuan','$ph_minggu_lalu','$ph_minggu_ini','$ps_minggu_lalu','$ps_minggu_ini','$ps_satuan','$asal_barang')") or die (mysqli_error('Tabel tidak ditemukan'));
+        $query = mysql_query("INSERT INTO sembako (kategori,jenis,jenis_satuan,ph_minggu_lalu,ph_minggu_ini,ps_minggu_lalu,ps_minggu_ini,ps_satuan,asal_barang) VALUES ('$kategori','$jenis','$jenis_satuan','$ph_minggu_lalu','$ph_minggu_ini','$ps_minggu_lalu','$ps_minggu_ini','$ps_satuan','$asal_barang')") or die (mysql_error('Tabel tidak ditemukan'));
 
         if ($query) {
             echo "<script>alert('Data Berhasil disimpan');document.location.href='+home.php?page=c2VtYmFrb192aWV3'; </script>";

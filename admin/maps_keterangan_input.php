@@ -22,11 +22,11 @@
                         <div class="controls">
                             <?php    
                                 include '../page/page_config.php';    
-                                $result = mysqli_query("SELECT * FROM image_maps");  
+                                $result = mysql_query("SELECT * FROM image_maps");  
                                 $Array = "var id_blok = new Array();\n";  
                                     echo '<select name="id_blok" class="form-control" onchange="document.getElementById(\'id_blok\').value = id_blok[this.value]" required>';  
                                     echo '<option>--- BLOK KIOS ----</option>';  
-                                        while ($row = mysqli_fetch_array($result)) {  
+                                        while ($row = mysql_fetch_array($result)) {  
                                             echo '<option value="' . $row['id_blok'] . '">' . $row['id_blok'] . '</option>';  
                                             $Array .= "id_blok['" . $row['id'] . "'] = '" . addslashes($row['id_blok']) . "';\n";  
                                         }  

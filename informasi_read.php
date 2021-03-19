@@ -22,8 +22,8 @@
 
                             $id   = base64_decode($_GET['id']);
 
-                            $query = mysqli_query("SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
-                            $data  = mysqli_fetch_array($query);
+                            $query = mysql_query("SELECT * FROM informasi WHERE id='$id'") or die (mysql_error('Tabel tidak ditemukan'));
+                            $data  = mysql_fetch_array($query);
                         ?>
 
                         <div id="content">
@@ -34,8 +34,8 @@
                                           <li><h3>Berita Terbaru</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
-                                              while ($dataartikel = mysqli_fetch_array($query)) {
+                                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
+                                              while ($dataartikel = mysql_fetch_array($query)) {
 
                                               $id = base64_encode($dataartikel['id']);
                                           ?>
@@ -51,8 +51,8 @@
                                           <li><h3>Agenda</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
-                                              while ($dataartikel = mysqli_fetch_array($query)) {
+                                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
+                                              while ($dataartikel = mysql_fetch_array($query)) {
                                                 $id = base64_encode($dataartikel['id']);
                                           ?>
                                           <li><a href="informasi_read.php?id=<?php echo $id; ?>"><i class="icon-chevron-right"></i> <?php echo $dataartikel['judul']; ?></a></li>
@@ -67,8 +67,8 @@
                                           <li><h3>Pengumuman</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
-                                              while ($dataartikel = mysqli_fetch_array($query)) {
+                                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
+                                              while ($dataartikel = mysql_fetch_array($query)) {
                                                 $id = base64_encode($dataartikel['id']);
                                           ?>
                                           <li><a href="informasi_read.php?id=<?php echo $id; ?>"><i class="icon-chevron-right"></i> <?php echo $dataartikel['judul']; ?></a></li>
@@ -94,11 +94,11 @@
 
                                           <?php
                                              $query = "SELECT * FROM komentar WHERE id_topik='$id' AND topik='Berita' ORDER BY id DESC";
-                                             $hasil = mysqli_query($query);
+                                             $hasil = mysql_query($query);
 
-                                             if (mysqli_num_rows($hasil) > 0)
+                                             if (mysql_num_rows($hasil) > 0)
                                              {
-                                                while ($data = mysqli_fetch_array($hasil))
+                                                while ($data = mysql_fetch_array($hasil))
                                                 {
                                           ?>
 
@@ -124,7 +124,7 @@
 
                                           <?php
                                                 }
-                                             }elseif (mysqli_num_rows($hasil) == 0) echo "<p><div class='alert alert-danger'>Maaf, Belum ada Komentar</div></p>";
+                                             }elseif (mysql_num_rows($hasil) == 0) echo "<p><div class='alert alert-danger'>Maaf, Belum ada Komentar</div></p>";
                                           ?>
                                       </div>
                                         <br>

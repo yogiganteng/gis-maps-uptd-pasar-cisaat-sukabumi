@@ -28,8 +28,8 @@
                             <td class="value">
                             <?php
                                 include '../conf_config.php';
-                                $query =mysqli_query("SELECT * FROM informasi");
-                                $num_log1 = mysqli_num_rows ($query);
+                                $query =mysql_query("SELECT * FROM informasi");
+                                $num_log1 = mysql_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log1</span>";
                             ?>
                             </td>
@@ -38,8 +38,8 @@
                         <tr>
                             <td class="value">
                             <?php
-                                $query =mysqli_query("SELECT * FROM komentar");
-                                $num_log2 = mysqli_num_rows ($query);
+                                $query =mysql_query("SELECT * FROM komentar");
+                                $num_log2 = mysql_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log2</span>";
                             ?>
                             </td>
@@ -48,8 +48,8 @@
                         <tr>
                             <td class="value">
                             <?php
-                                $query =mysqli_query("SELECT * FROM galeri");
-                                $num_log3 = mysqli_num_rows ($query);
+                                $query =mysql_query("SELECT * FROM galeri");
+                                $num_log3 = mysql_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log3</span>";
                             ?>
                             </td>
@@ -58,8 +58,8 @@
                         <tr>
                             <td class="value">
                             <?php
-                                $query =mysqli_query("SELECT * FROM kios");
-                                $num_log4 = mysqli_num_rows ($query);
+                                $query =mysql_query("SELECT * FROM kios");
+                                $num_log4 = mysql_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log4</span>";
                             ?>
                             </td>

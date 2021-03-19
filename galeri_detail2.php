@@ -24,8 +24,8 @@
 						<?php  
 							include 'page/page_config.php';
 
-					        $sql         = mysqli_query("SELECT * FROM galeri WHERE status='1' and kategori='$_GET[id]'");
-					         while($ambilgambar = mysqli_fetch_array($sql)){
+					        $sql         = mysql_query("SELECT * FROM galeri WHERE status='1' and kategori='$_GET[id]'");
+					         while($ambilgambar = mysql_fetch_array($sql)){
 					    ?>
 						<li>
 							<a href="gambar_galeri/<?php echo $ambilgambar['gambar'] ?>" title="<?php echo $ambilgambar['judul'] ?>" class="ui-lightbox">

@@ -1,13 +1,16 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<?php include 'page/page_head.php'; ?>
-<body>
-<div id="wrapper">
-<?php include 'page/page_topbar.php'; ?>
-<?php include 'page/page_header.php'; ?>
-<?php include 'home_default.php'; ?>
-</div>
-<?php include 'page/page_foo.php'; ?>
-<?php include 'page/page_footer.php'; ?>
-</body>
-</html>
+
+<?php
+$db_host = "localhost";
+$db_user = "yogi";
+$db_pass ="Dbdigitalocean2021!";
+$db_name 	="project_gis_pasarcisaat";
+
+
+ 
+$koneksi = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+ 
+if(mysqli_connect_errno()){
+	echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
+}else{
+	echo 'Koneksi berhasil ^_^';
+}

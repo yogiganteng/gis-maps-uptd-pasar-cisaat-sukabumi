@@ -28,11 +28,11 @@
                         <div class="controls">
                             <?php    
                                 include '../page/page_config.php';    
-                                $result = mysqli_query("SELECT * FROM informasi_kategori");  
+                                $result = mysql_query("SELECT * FROM informasi_kategori");  
                                 $Array = "var kategori = new Array();\n";  
                                     echo '<select name="kategori" class="form-control" onchange="document.getElementById(\'kategori\').value = kategori[this.value]">';  
                                     echo '<option>--- Kategori ----</option>';  
-                                        while ($row = mysqli_fetch_array($result)) {  
+                                        while ($row = mysql_fetch_array($result)) {  
                                             echo '<option value="' . $row['kategori'] . '">' . $row['kategori'] . '</option>';  
                                             $Array .= "kategori['" . $row['katbe_id'] . "'] = '" . addslashes($row['kategori']) . "';\n";  
                                         }  

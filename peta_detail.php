@@ -65,8 +65,8 @@
 								<?php
 									include 'page/page_config.php';
 
-									$query = mysqli_query("SELECT * FROM image_maps") or die (mysqli_error('tabel tidak ditemukan'));
-									while($data = mysqli_fetch_array($query)){
+									$query = mysql_query("SELECT * FROM image_maps") or die (mysql_error('tabel tidak ditemukan'));
+									while($data = mysql_fetch_array($query)){
 								?>
 									<area 
 										id="<?php echo $data['id_blok']; ?>" 

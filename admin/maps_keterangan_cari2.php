@@ -38,8 +38,8 @@
     		$cari = $_GET['blok'];
 
     		$no = 1;
-    		$query = mysqli_query("SELECT * FROM kios WHERE id_blok LIKE '%$cari%' LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
-    			while ($data = mysqli_fetch_array($query)){
+    		$query = mysql_query("SELECT * FROM kios WHERE id_blok LIKE '%$cari%' LIMIT 0, 30") or die (mysql_error('Tabel tidak ditemukan'));
+    			while ($data = mysql_fetch_array($query)){
     	?>
         <tr>
         	<td><?php echo $no; ?></td>

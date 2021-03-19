@@ -23,11 +23,11 @@
 	                  <li><hr></li>
 	                  <?php 
                          include 'page/page_config.php';
-                            $get_on =mysqli_query("SELECT * FROM galeri_kategori ORDER BY kategori");
-                            $num_log = mysqli_num_rows ($get_on);
-                                while ($row=mysqli_fetch_assoc($get_on)){
-                            $jumlah=mysqli_query("SELECT * FROM galeri_kategori WHERE kategori='$row[kategori]'");
-                            $berita = mysqli_num_rows($jumlah);
+                            $get_on =mysql_query("SELECT * FROM galeri_kategori ORDER BY kategori");
+                            $num_log = mysql_num_rows ($get_on);
+                                while ($row=mysql_fetch_assoc($get_on)){
+                            $jumlah=mysql_query("SELECT * FROM galeri_kategori WHERE kategori='$row[kategori]'");
+                            $berita = mysql_num_rows($jumlah);
                         ?>
 	                  <li><a href="galeri_detail2.php?&id=<?php echo $row['kategori'];?>"><i class="icon-chevron-right"></i> 
 	                  <?php echo $row['kategori']; ?></a></li>
@@ -44,8 +44,8 @@
 						<?php  
 							include 'page/page_config.php';
 
-							$query = mysqli_query("SELECT * FROM galeri WHERE status='1' ORDER BY id DESC LIMIT 8");
-							 while ($ambilgambar = mysqli_fetch_array($query)){
+							$query = mysql_query("SELECT * FROM galeri WHERE status='1' ORDER BY id DESC LIMIT 8");
+							 while ($ambilgambar = mysql_fetch_array($query)){
 						?>
 						<li>
 							<a href="gambar_galeri/<?php echo $ambilgambar['gambar'] ?>" class="ui-lightbox">

@@ -7,7 +7,7 @@
 	$isi    = $_POST['isi'];
 	$status = '1';
 
-	$query = mysqli_query("INSERT INTO kotak_saran (nama,email,date,isi,status) VALUES ('$nama', '$email', '$date', '$isi', '$status')") or die (mysqli_error('tabel tidak ditemukan'));
+	$query = mysql_query("INSERT INTO kotak_saran (nama,email,date,isi,status) VALUES ('$nama', '$email', '$date', '$isi', '$status')") or die (mysql_error('tabel tidak ditemukan'));
 
 	if ($query) {
 		echo '<script>alert ("Kotak Saran Berhasil dikirim"); document.location.href="kotak_saran_detail.php";</script>';

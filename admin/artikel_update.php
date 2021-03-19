@@ -1,8 +1,8 @@
 <?php
     include '../page/page_config.php';
 
-    $querygambar = mysqli_query("SELECT * FROM informasi");
-    $datagambar  = mysqli_fetch_array($querygambar);
+    $querygambar = mysql_query("SELECT * FROM informasi");
+    $datagambar  = mysql_fetch_array($querygambar);
 
     $namafolder="../gambar_artikel/"; 
 
@@ -24,7 +24,7 @@
                 echo '<script>alert ("Artikel Berhasil diupdate"); document.location.href="+home.php?page=YXJ0aWtlbF92aWV3";</script>';
                     unlink($datagambar['gambar']);
 
-                $query= mysqli_query("UPDATE informasi SET judul='$judul', anchor='$anchor', date='$date', kategori='$kategori', isi='$isi', gambar='$gambar', status='$status' WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
+                $query= mysql_query("UPDATE informasi SET judul='$judul', anchor='$anchor', date='$date', kategori='$kategori', isi='$isi', gambar='$gambar', status='$status' WHERE id='$id'") or die (mysql_error('Tabel tidak ditemukan'));
             }else{ 
                 echo '<script>alert ("Maaf, Artikel Gagal diupdate!"); document.location.href="+home.php?page=YXJ0aWtlbF92aWV3";</script>';
             }

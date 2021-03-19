@@ -25,7 +25,7 @@
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $gambar)) {
                 echo '<script>alert ("Data Status Kepemilikan KIOS Berhasil dipublish"); document.location.href="+home.php?page=bWFwc19rZXRlcmFuZ2FuX3ZpZXc=";</script>';
 
-                $query= mysqli_query("INSERT INTO kios (id_blok,no_blok,nama,tempat,tanggal,alamat,pekerjaan,jenis_komoditas,type,ukuran,status_kepemilikan,no_shgp,foto,status) VALUES ('$id_blok','$no_blok','$nama','$tempat','$tanggal','$alamat','$pekerjaan','$jenis_komoditas','$type','$ukuran','$status_kepemilikan','$no_shgp','$gambar','$status');") or die (mysqli_error('Tabel tidak ditemukan'));
+                $query= mysql_query("INSERT INTO kios (id_blok,no_blok,nama,tempat,tanggal,alamat,pekerjaan,jenis_komoditas,type,ukuran,status_kepemilikan,no_shgp,foto,status) VALUES ('$id_blok','$no_blok','$nama','$tempat','$tanggal','$alamat','$pekerjaan','$jenis_komoditas','$type','$ukuran','$status_kepemilikan','$no_shgp','$gambar','$status');") or die (mysql_error('Tabel tidak ditemukan'));
             }else{ 
                 echo '<script>alert ("Maaf, Data Status Kepemilikan KIOS Gagal diPublish!"); document.location.href="+home.php?page=bWFwc19rZXRlcmFuZ2FuX2lucHV0";</script>';
             }

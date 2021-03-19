@@ -3,10 +3,10 @@
 
 	$id = base64_decode($_GET['id']);
 
-	$query = mysqli_query("SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
-	$data  = mysqli_fetch_array($query);
+	$query = mysql_query("SELECT * FROM informasi WHERE id='$id'") or die (mysql_error('tabel tidak ditemukan'));
+	$data  = mysql_fetch_array($query);
 
-	$querydelete = mysqli_query("DELETE FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
+	$querydelete = mysql_query("DELETE FROM informasi WHERE id='$id'") or die (mysql_error('tabel tidak ditemukan'));
 		unlink($data['gambar']);
 
 	if ($querydelete) {
