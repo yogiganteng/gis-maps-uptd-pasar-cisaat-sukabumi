@@ -26,8 +26,8 @@ $db 		="project_gis_pasarcisaat";
 $koneksi2=mysql_connect($host,$user,$pass);
 mysql_select_db($db,$koneksi);	
 
-if(mysql_connect_errno()){
-	echo 'Gagal melakukan koneksi ke Database : '.mysql_connect_error();
+if($koneksi2){
+	echo 'Gagal melakukan koneksi ke Database : ';
 }else{
 	echo 'Koneksi berhasil ^_^';
 }
