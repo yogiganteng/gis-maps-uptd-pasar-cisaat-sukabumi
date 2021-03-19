@@ -22,7 +22,7 @@ $kata_sandi = 'Dbdigitalocean2021!';
 $nama_host = 'localhost';
 $koneksi = mysqli_connect($nama_host, $user_db, $kata_sandi) or die("Tidak bisa tersambung ke '$nama_host'");
 mysqli_select_db($koneksi, $nama_db) or die("Tidak bisa membuka database '$nama_db'");
-$uji_query = "SHOW TABLES FROM $nama_db";
+$uji_query = "select * from admin";
 $hasil = mysqli_query($link, $uji_query);
 $hitung_tabel = 0;
 while($tabel = mysqli_fetch_array($hasil)) {
