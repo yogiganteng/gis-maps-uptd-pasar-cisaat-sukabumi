@@ -3,7 +3,7 @@
 
 	$host		="localhost";
 	$user		="yogi";
-	$pass		="";
+	$pass		="Dbdigitalocean2021!";
 	$db 		="project_gis_pasarcisaat";
 
 	$koneksi=mysql_connect($host,$user,$pass);
