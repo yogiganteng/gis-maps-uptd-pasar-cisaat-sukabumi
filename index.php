@@ -1,7 +1,7 @@
 
 <?php
 $db_host = "localhost";
-$db_user = "yogi";
+$db_user = "root";
 $db_pass ="Dbdigitalocean2021!";
 $db_name 	="project_gis_pasarcisaat";
 
@@ -17,7 +17,7 @@ if(mysqli_connect_errno()){
 
 
 $nama_db = 'project_gis_pasarcisaat';
-$user_db = 'yogi';
+$user_db = 'root';
 $kata_sandi = 'Dbdigitalocean2021!';
 $nama_host = 'localhost';
 $koneksi = mysqli_connect($nama_host, $user_db, $kata_sandi) or die("Tidak bisa tersambung ke '$nama_host'");
