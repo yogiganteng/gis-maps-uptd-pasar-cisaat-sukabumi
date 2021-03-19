@@ -16,27 +16,8 @@ if(mysqli_connect_errno()){
 }
 
 
-$host		="localhost";
-	$user		="yogi";
-	$pass		="Dbdigitalocean2021!";
-	$db 		="project_gis_pasarcisaat";
-
-	$koneksi2=mysql_connect($host,$user,$pass);
-
-if($koneksi2)
-{
-echo ('okk');
-} else {
-echo ('gagal');
-}
-$nama_db = 'project_gis_pasarcisaat';
-$user_db = 'yogi';
-$kata_sandi = 'Dbdigitalocean2021!';
-$nama_host = 'localhost';
-$koneksi = mysqli_connect($nama_host, $user_db, $kata_sandi) or die("Tidak bisa tersambung ke '$nama_host'");
-mysqli_select_db($koneksi, $nama_db) or die("Tidak bisa membuka database '$nama_db'");
 $uji_query = "select * from admin";
-$hasil = mysqli_query($link, $uji_query);
+$hasil = mysqli_query($koneksi, $uji_query);
 $hitung_tabel = 0;
 while($tabel = mysqli_fetch_array($hasil)) {
   $hitung_tabel++;
