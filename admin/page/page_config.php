@@ -2,7 +2,7 @@
 	ini_set('display_errors',FALSE);
 
 	$host		="localhost";
-	$user		="root";
+	$user		="yogi";
 	$pass		="";
 	$db 		="project_gis_pasarcisaat";
 
