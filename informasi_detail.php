@@ -105,7 +105,7 @@
                                               $noPage = 1;
                                               $offset = ($noPage - 1) * $dataPerPage;
                                               $query  = "SELECT * FROM informasi WHERE kategori='Berita Terbaru' AND status='1' ORDER BY id DESC LIMIT $offset, $dataPerPage";
-                                              $result = mysqli_query($query) or die('Error');
+                                              $result = mysqli_query($koneksi, $query) or die('Error');
                                         ?>
 
                                         <!-- ===============================bagian isi berita========================================= -->
@@ -161,7 +161,7 @@
                                         <center>
                                           <?php
                                             $query  = "SELECT COUNT(*) AS jumData FROM informasi";
-                                            $hasil  = mysqli_query($query);
+                                            $hasil  = mysqli_query($koneksi, $query);
                                             $data   = mysqli_fetch_array($hasil);
 
                                             $jumData = $data['jumData'];

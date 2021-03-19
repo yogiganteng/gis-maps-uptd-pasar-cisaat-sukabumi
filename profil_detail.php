@@ -91,7 +91,7 @@
 
                                           <?php
                                              $query = "SELECT * FROM komentar WHERE id_topik='$id' AND topik='Profil' ORDER BY id DESC";
-                                             $hasil = mysqli_query($query);
+                                             $hasil = mysqli_query($koneksi, $query);
 
                                              if (mysqli_num_rows($hasil) > 0)
                                              {
