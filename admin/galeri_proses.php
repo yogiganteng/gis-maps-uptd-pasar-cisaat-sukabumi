@@ -17,7 +17,7 @@
             if (move_uploaded_file($_FILES['gambar']['tmp_name'], $gambar)) {
                 echo '<script>alert ("galeri Berhasil dipublish"); document.location.href="+home.php?page=Z2FsZXJpX3ZpZXc=";</script>';
 
-                $query= mysql_query("INSERT INTO galeri (judul,anchor,date,kategori,gambar,status) VALUES ('$judul', '$anchor', '$date', '$kategori', '$gambar', '$status');") or die (mysql_error('Tabel tidak ditemukan'));
+                $query= mysqli_query("INSERT INTO galeri (judul,anchor,date,kategori,gambar,status) VALUES ('$judul', '$anchor', '$date', '$kategori', '$gambar', '$status');") or die (mysqli_error('Tabel tidak ditemukan'));
             }else{ 
                 echo '<script>alert ("Maaf, galeri Gagal diPublish!"); document.location.href="+home.php?page=Z2FsZXJpX2lucHV0";</script>';
             }

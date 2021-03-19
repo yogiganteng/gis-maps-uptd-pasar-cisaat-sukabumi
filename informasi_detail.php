@@ -26,8 +26,8 @@
                                           <li><h3 class="sidebar_kiri">Berita Terbaru</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
-                                              while ($dataartikel = mysql_fetch_array($query)) {
+                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
+                                              while ($dataartikel = mysqli_fetch_array($query)) {
 
                                               $id = base64_encode($dataartikel['id']);
                                           ?>
@@ -43,8 +43,8 @@
                                           <li><h3 class="sidebar_kiri">Agenda</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
-                                              while ($dataartikel = mysql_fetch_array($query)) {
+                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
+                                              while ($dataartikel = mysqli_fetch_array($query)) {
                                                 $id = base64_encode($dataartikel['id']);
                                           ?>
                                           <li><a href="informasi_read.php?id=<?php echo $id; ?>"><i class="icon-chevron-right"></i> <?php echo $dataartikel['judul']; ?></a></li>
@@ -59,8 +59,8 @@
                                           <li><h3 class="sidebar_kiri">Pengumuman</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysql_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
-                                              while ($dataartikel = mysql_fetch_array($query)) {
+                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
+                                              while ($dataartikel = mysqli_fetch_array($query)) {
                                                 $id = base64_encode($dataartikel['id']);
                                           ?>
                                           <li><a href="informasi_read.php?id=<?php echo $id; ?>"><i class="icon-chevron-right"></i> <?php echo $dataartikel['judul']; ?></a></li>
@@ -105,13 +105,13 @@
                                               $noPage = 1;
                                               $offset = ($noPage - 1) * $dataPerPage;
                                               $query  = "SELECT * FROM informasi WHERE kategori='Berita Terbaru' AND status='1' ORDER BY id DESC LIMIT $offset, $dataPerPage";
-                                              $result = mysql_query($query) or die('Error');
+                                              $result = mysqli_query($query) or die('Error');
                                         ?>
 
                                         <!-- ===============================bagian isi berita========================================= -->
 
                                         <?php
-                                          while($data = mysql_fetch_array($result))
+                                          while($data = mysqli_fetch_array($result))
                                           {
 
                                             $id      = base64_encode($data['id']);
@@ -161,8 +161,8 @@
                                         <center>
                                           <?php
                                             $query  = "SELECT COUNT(*) AS jumData FROM informasi";
-                                            $hasil  = mysql_query($query);
-                                            $data   = mysql_fetch_array($hasil);
+                                            $hasil  = mysqli_query($query);
+                                            $data   = mysqli_fetch_array($hasil);
 
                                             $jumData = $data['jumData'];
                                             $jumPage = ceil($jumData/$dataPerPage);

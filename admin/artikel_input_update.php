@@ -3,8 +3,8 @@
 
     $id = base64_decode($_GET['id']);
 
-    $query = mysql_query("SELECT * FROM informasi WHERE id='$id'") or die (mysql_error('tabel tidak ditemukan'));
-    $data  = mysql_fetch_array($query);
+    $query = mysqli_query("SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
+    $data  = mysqli_fetch_array($query);
 ?>
 
 <div id="masthead">
@@ -39,11 +39,11 @@
                         <div class="controls">
                             <?php    
                                 include '../page/page_config.php';    
-                                $result = mysql_query("SELECT * FROM informasi_kategori");  
+                                $result = mysqli_query("SELECT * FROM informasi_kategori");  
                                 $Array = "var kategori = new Array();\n";  
                                     echo '<select name="kategori" class="form-control" onchange="document.getElementById(\'kategori\').value = kategori[this.value]">';  
                                     echo '<option value="' . $data['kategori'] . '">' . $data['kategori'] . '</option>';    
-                                        while ($row = mysql_fetch_array($result)) {  
+                                        while ($row = mysqli_fetch_array($result)) {  
                                             echo '<option value="' . $row['kategori'] . '">' . $row['kategori'] . '</option>';  
                                             $Array .= "kategori['" . $row['id'] . "'] = '" . addslashes($row['kategori']) . "';\n";  
                                         }  

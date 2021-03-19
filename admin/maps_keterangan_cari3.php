@@ -38,8 +38,8 @@
     		$id = $_GET['id'];
 
     		$no = 1;
-    		$query = mysql_query("SELECT * FROM kios LIMIT 0, 30") or die (mysql_error('Tabel tidak ditemukan'));
-    			while ($data = mysql_fetch_array($query)){
+    		$query = mysqli_query("SELECT * FROM kios LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
+    			while ($data = mysqli_fetch_array($query)){
     	?>
         <tr>
         	<td><?php echo $no; ?></td>
