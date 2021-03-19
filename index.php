@@ -1,13 +1,11 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<?php include 'page/page_head.php'; ?>
-<body>
-<div id="wrapper">
-<?php include 'page/page_topbar.php'; ?>
-<?php include 'page/page_header.php'; ?>
-<?php include 'home_default.php'; ?>
-</div>
-<?php include 'page/page_foo.php'; ?>
-<?php include 'page/page_footer.php'; ?>
-</body>
-</html>
+ <?php
+$koneksi = mysqli_connect("localhost","yogi","Dbdigitalocean2021!","project_gis_pasarcisaat");
+ 
+ // Check connection
+ if (mysqli_connect_errno()){
+     echo "Koneksi database gagal : " . mysqli_connect_error();
+ }else{
+     echo 'ok';
+ }
+ 
+ ?>
