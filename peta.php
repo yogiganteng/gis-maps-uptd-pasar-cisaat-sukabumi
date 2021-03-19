@@ -6,7 +6,7 @@
 		<?php
 			include 'page/page_config.php';
 
-			$query = mysqli_query("SELECT * FROM image_maps WHERE status='ADA' ") or die (mysqli_error('tabel tidak ditemukan'));
+			$query = mysqli_query($koneksi,"SELECT * FROM image_maps WHERE status='ADA' ") or die (mysqli_error('tabel tidak ditemukan'));
 			while($data = mysqli_fetch_array($query)){
 		?>
 

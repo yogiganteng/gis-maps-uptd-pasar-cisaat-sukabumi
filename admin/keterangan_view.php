@@ -18,7 +18,7 @@
                 <?php
             		include '../page/page_config.php';
 
-            		$query = mysqli_query("SELECT * FROM keterangan_harga_sembako") or die (mysqli_error('Tabel tidak ditemukan'));
+            		$query = mysqli_query($koneksi,"SELECT * FROM keterangan_harga_sembako") or die (mysqli_error('Tabel tidak ditemukan'));
             		$data  = mysqli_fetch_array($query);
             	?>  
                 <table class="table table-hover table-striped">

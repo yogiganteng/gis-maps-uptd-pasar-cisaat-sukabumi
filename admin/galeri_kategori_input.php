@@ -45,7 +45,7 @@
                             include '../page/page_config.php';
 
                             $no = 1;
-                            $query = mysqli_query("SELECT * FROM galeri_kategori") or die (mysqli_error('Tabel tidak ditemukan'));
+                            $query = mysqli_query($koneksi,"SELECT * FROM galeri_kategori") or die (mysqli_error('Tabel tidak ditemukan'));
                                 while ($data = mysqli_fetch_array($query)){
 
                                 $id = base64_encode($data['id']);

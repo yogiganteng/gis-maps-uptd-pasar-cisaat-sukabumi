@@ -28,7 +28,7 @@
                             <td class="value">
                             <?php
                                 include '../conf_config.php';
-                                $query =mysqli_query("SELECT * FROM informasi");
+                                $query =mysqli_query($koneksi,"SELECT * FROM informasi");
                                 $num_log1 = mysqli_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log1</span>";
                             ?>
@@ -38,7 +38,7 @@
                         <tr>
                             <td class="value">
                             <?php
-                                $query =mysqli_query("SELECT * FROM komentar");
+                                $query =mysqli_query($koneksi,"SELECT * FROM komentar");
                                 $num_log2 = mysqli_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log2</span>";
                             ?>
@@ -48,7 +48,7 @@
                         <tr>
                             <td class="value">
                             <?php
-                                $query =mysqli_query("SELECT * FROM galeri");
+                                $query =mysqli_query($koneksi,"SELECT * FROM galeri");
                                 $num_log3 = mysqli_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log3</span>";
                             ?>
@@ -58,7 +58,7 @@
                         <tr>
                             <td class="value">
                             <?php
-                                $query =mysqli_query("SELECT * FROM kios");
+                                $query =mysqli_query($koneksi,"SELECT * FROM kios");
                                 $num_log4 = mysqli_num_rows ($query);
                                 echo "<span class=\"badge badge-secondary\">$num_log4</span>";
                             ?>

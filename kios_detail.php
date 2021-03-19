@@ -44,7 +44,7 @@
 										        <tbody>
 										        	<?php
 										        		include 'page/page_config.php';
-										        		$query = mysqli_query("SELECT * FROM kios ORDER BY id DESC LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
+										        		$query = mysqli_query($koneksi,"SELECT * FROM kios ORDER BY id DESC LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
 										        			while ($data = mysqli_fetch_array($query)){
 
 										        			$id = base64_encode($data['id']);

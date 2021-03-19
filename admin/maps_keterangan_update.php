@@ -26,7 +26,7 @@
             $gambar = $namafolder . basename($_FILES['foto']['name']);       
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $gambar)) {
                 
-                $query2     = mysqli_query("SELECT * FROM kios WHERE id='$id'");
+                $query2     = mysqli_query($koneksi,"SELECT * FROM kios WHERE id='$id'");
                 $ambilkios = mysqli_fetch_array($query2);
                 unlink($ambilkios['foto']);
 

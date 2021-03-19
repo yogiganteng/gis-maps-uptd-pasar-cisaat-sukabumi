@@ -3,7 +3,7 @@
 
     $id = base64_decode($_GET['id']);
 
-    $query    = mysqli_query("SELECT * FROM kios WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
+    $query    = mysqli_query($koneksi,"SELECT * FROM kios WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
     $data = mysqli_fetch_array($query);
 ?>
 
@@ -32,7 +32,7 @@
                         <div class="controls">
                             <?php    
                                 include '../page/page_config.php';    
-                                $result = mysqli_query("SELECT * FROM image_maps");  
+                                $result = mysqli_query($koneksi,"SELECT * FROM image_maps");  
                                 $Array = "var id_blok = new Array();\n";  
                                     echo '<select name="id_blok" class="form-control" onchange="document.getElementById(\'id_blok\').value = id_blok[this.value]" required>';  
                                     echo '<option value="' . $data['blok'] . '">' . $data['blok'] . '</option>';    

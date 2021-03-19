@@ -28,7 +28,7 @@
                         <div class="controls">
                             <?php    
                                 include '../page/page_config.php';    
-                                $result = mysqli_query("SELECT * FROM informasi_kategori");  
+                                $result = mysqli_query($koneksi,"SELECT * FROM informasi_kategori");  
                                 $Array = "var kategori = new Array();\n";  
                                     echo '<select name="kategori" class="form-control" onchange="document.getElementById(\'kategori\').value = kategori[this.value]">';  
                                     echo '<option>--- Kategori ----</option>';  

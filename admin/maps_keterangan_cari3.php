@@ -38,7 +38,7 @@
     		$id = $_GET['id'];
 
     		$no = 1;
-    		$query = mysqli_query("SELECT * FROM kios LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
+    		$query = mysqli_query($koneksi,"SELECT * FROM kios LIMIT 0, 30") or die (mysqli_error('Tabel tidak ditemukan'));
     			while ($data = mysqli_fetch_array($query)){
     	?>
         <tr>

@@ -1,7 +1,7 @@
 <?php
     include '../page/page_config.php';
 
-    $querygambar = mysqli_query("SELECT * FROM informasi");
+    $querygambar = mysqli_query($koneksi,"SELECT * FROM informasi");
     $datagambar  = mysqli_fetch_array($querygambar);
 
     $namafolder="../gambar_artikel/"; 

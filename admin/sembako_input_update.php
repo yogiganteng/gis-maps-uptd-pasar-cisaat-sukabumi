@@ -3,7 +3,7 @@
 
     $id = base64_decode($_GET['id']);
 
-    $query = mysqli_query("SELECT * FROM sembako WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
+    $query = mysqli_query($koneksi,"SELECT * FROM sembako WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
     $data  = mysqli_fetch_array($query);
 ?>
 

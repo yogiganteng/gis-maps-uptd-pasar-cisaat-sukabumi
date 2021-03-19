@@ -24,7 +24,7 @@
 						<?php  
 							include 'page/page_config.php';
 
-					        $sql         = mysqli_query("SELECT * FROM galeri WHERE status='1' and kategori='$_GET[id]'");
+					        $sql         = mysqli_query($koneksi,"SELECT * FROM galeri WHERE status='1' and kategori='$_GET[id]'");
 					         while($ambilgambar = mysqli_fetch_array($sql)){
 					    ?>
 						<li>

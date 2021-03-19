@@ -3,7 +3,7 @@
 
     $id = base64_decode($_GET['id']);
 
-    $query = mysqli_query("SELECT * FROM profil WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
+    $query = mysqli_query($koneksi,"SELECT * FROM profil WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
     $data  = mysqli_fetch_array($query);
 ?>
 

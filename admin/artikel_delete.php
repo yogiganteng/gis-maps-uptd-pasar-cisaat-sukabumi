@@ -3,7 +3,7 @@
 
 	$id = base64_decode($_GET['id']);
 
-	$query = mysqli_query("SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
+	$query = mysqli_query($koneksi,"SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
 	$data  = mysqli_fetch_array($query);
 
 	$querydelete = mysqli_query("DELETE FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));

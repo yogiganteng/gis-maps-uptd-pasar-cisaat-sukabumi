@@ -6,7 +6,7 @@
 	$password = $_POST['passs'];
 
 	if ($username&&$password){
-		$get_log = mysqli_query("SELECT * FROM admin WHERE username='$username'");
+		$get_log = mysqli_query($koneksi,"SELECT * FROM admin WHERE username='$username'");
 		$num_log = mysqli_num_rows ($get_log);
 		if ($num_log!=0){
 			while ($row = mysqli_fetch_assoc($get_log)){

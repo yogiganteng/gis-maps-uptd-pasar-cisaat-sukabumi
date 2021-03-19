@@ -22,7 +22,7 @@
 
                             $id   = base64_decode($_GET['id']);
 
-                            $query = mysqli_query("SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
+                            $query = mysqli_query($koneksi,"SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('Tabel tidak ditemukan'));
                             $data  = mysqli_fetch_array($query);
                         ?>
 
@@ -34,7 +34,7 @@
                                           <li><h3>Berita Terbaru</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
+                                            $query = mysqli_query($koneksi,"SELECT * FROM informasi WHERE status='1' AND kategori='Berita Terbaru' ORDER BY id DESC LIMIT 5");
                                               while ($dataartikel = mysqli_fetch_array($query)) {
 
                                               $id = base64_encode($dataartikel['id']);
@@ -51,7 +51,7 @@
                                           <li><h3>Agenda</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
+                                            $query = mysqli_query($koneksi,"SELECT * FROM informasi WHERE status='1' AND kategori='Agenda' ORDER BY id DESC LIMIT 5");
                                               while ($dataartikel = mysqli_fetch_array($query)) {
                                                 $id = base64_encode($dataartikel['id']);
                                           ?>
@@ -67,7 +67,7 @@
                                           <li><h3>Pengumuman</h3></li>
                                           <li><hr></li>
                                           <?php
-                                            $query = mysqli_query("SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
+                                            $query = mysqli_query($koneksi,"SELECT * FROM informasi WHERE status='1' AND kategori='Pengumuman' ORDER BY id DESC LIMIT 5");
                                               while ($dataartikel = mysqli_fetch_array($query)) {
                                                 $id = base64_encode($dataartikel['id']);
                                           ?>

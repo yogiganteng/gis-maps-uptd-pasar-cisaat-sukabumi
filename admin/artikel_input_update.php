@@ -3,7 +3,7 @@
 
     $id = base64_decode($_GET['id']);
 
-    $query = mysqli_query("SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
+    $query = mysqli_query($koneksi,"SELECT * FROM informasi WHERE id='$id'") or die (mysqli_error('tabel tidak ditemukan'));
     $data  = mysqli_fetch_array($query);
 ?>
 
@@ -39,7 +39,7 @@
                         <div class="controls">
                             <?php    
                                 include '../page/page_config.php';    
-                                $result = mysqli_query("SELECT * FROM informasi_kategori");  
+                                $result = mysqli_query($koneksi,"SELECT * FROM informasi_kategori");  
                                 $Array = "var kategori = new Array();\n";  
                                     echo '<select name="kategori" class="form-control" onchange="document.getElementById(\'kategori\').value = kategori[this.value]">';  
                                     echo '<option value="' . $data['kategori'] . '">' . $data['kategori'] . '</option>';    

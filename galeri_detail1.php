@@ -23,10 +23,10 @@
 	                  <li><hr></li>
 	                  <?php 
                          include 'page/page_config.php';
-                            $get_on =mysqli_query("SELECT * FROM galeri_kategori ORDER BY kategori");
+                            $get_on =mysqli_query($koneksi,"SELECT * FROM galeri_kategori ORDER BY kategori");
                             $num_log = mysqli_num_rows ($get_on);
                                 while ($row=mysqli_fetch_assoc($get_on)){
-                            $jumlah=mysqli_query("SELECT * FROM galeri_kategori WHERE kategori='$row[kategori]'");
+                            $jumlah=mysqli_query($koneksi,"SELECT * FROM galeri_kategori WHERE kategori='$row[kategori]'");
                             $berita = mysqli_num_rows($jumlah);
                         ?>
 	                  <li><a href="galeri_detail2.php?&id=<?php echo $row['kategori'];?>"><i class="icon-chevron-right"></i> 
@@ -44,7 +44,7 @@
 						<?php  
 							include 'page/page_config.php';
 
-							$query = mysqli_query("SELECT * FROM galeri WHERE status='1' ORDER BY id DESC LIMIT 8");
+							$query = mysqli_query($koneksi,"SELECT * FROM galeri WHERE status='1' ORDER BY id DESC LIMIT 8");
 							 while ($ambilgambar = mysqli_fetch_array($query)){
 						?>
 						<li>
